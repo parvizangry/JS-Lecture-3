@@ -68,6 +68,18 @@ ___
 
 #### ***(В этом примере функция `makeGreeting` возвращает другую функцию, которая использует параметр `name`. Когда мы вызываем `makeGreeting` с аргументом `"Alice"`, мы создаем closure, которое запоминает `"Alice"` как значение параметра `name`. Даже после завершения `makeGreeting` closure все еще может обращаться к переменной `name` и использовать ее в операторе `console.log`. Вот как работают замыкания в JavaScript.)***
 
+```
+function outerFunction(x) {
+    return function innerFunction(y) {
+        return x + y;
+    };
+}
+
+var closureExample = outerFunction(5);
+console.log(closureExample(3)); // Выводит: 8
+
+```
+#### ***(Здесь innerFunction - это замыкание, она сохраняет значение x, переданное во внешнюю функцию outerFunction. Таким образом, даже после завершения работы outerFunction, innerFunction может продолжать использовать значение x.)***
 ___
 
 
